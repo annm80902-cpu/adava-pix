@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PixelLab Pro+ | ADAVA Arts</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/5.3.1/fabric.min.js"></script>
+</head>
+<body>
+
+    <header>
+        <div class="logo">PIXELLAB PRO+</div>
+        <div class="header-tools">
+            <button onclick="undo()">Undo</button>
+            <button onclick="redo()">Redo</button>
+            <button onclick="deleteObject()" class="btn-danger">Erase</button>
+            <button onclick="exportImage()" class="btn-success">Export 4K</button>
+        </div>
+    </header>
+
+    <div class="workspace">
+        <nav class="toolbar-left">
+            <button onclick="addText()">TEXT</button>
+            <button onclick="addRect()">BOX</button>
+            <button onclick="addCircle()">CIRCLE</button>
+            <label for="img-input" class="import-label">IMPORT</label>
+            <input type="file" id="img-input" hidden accept="image/*">
+        </nav>
+
+        <main id="canvas-wrapper">
+            <canvas id="mainCanvas"></canvas>
+        </main>
+
+        <aside class="properties-panel">
+            <h3>Customization</h3>
+            
+            <label>Canvas Background</label>
+            <input type="color" id="bgColor" value="#ffffff" onchange="changeBg(this.value)">
+
+            <label>Font Style</label>
+            <select id="fontFamily" onchange="changeFont(this.value)">
+                <option value="Arial">Arial</option>
+                <option value="Impact">Bold Impact</option>
+                <option value="Courier New">Retro</option>
+                <option value="Georgia">Classic</option>
+            </select>
+
+            <label>Object Color</label>
+            <input type="color" id="objColor" value="#000000" onchange="changeObjColor(this.value)">
+        </aside>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+      </html>
+  
